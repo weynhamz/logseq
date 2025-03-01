@@ -158,6 +158,10 @@
                  (fn [code]
                    (user/login-callback code)))
 
+  (safe-api-call "pluginCallback"
+                 (fn [args]
+                   (state/pub-event! [:plugin/x-callback args])))
+
   (safe-api-call "quickCapture"
                  (fn [args]
                    (state/pub-event! [:editor/quick-capture args])))

@@ -79,6 +79,12 @@
                                                             (= append "true"))}
                                   win))
 
+      (re-matches #"/plugin/[^/]+/callback" action)
+      (let [plugin-name (nth (string/split action #"/") 2)]
+        (when plugin-name
+          (let [params (get-URL-decoded-params parsed-url ["code"])]
+            (send-to-focused-renderer "pluginCallback" {:plugin-name plugin-name :params params} win))))
+
       :else
       (send-to-focused-renderer "notification" {:type "error"
                                                 :payload (str "Unimplemented x-callback-url action: `"

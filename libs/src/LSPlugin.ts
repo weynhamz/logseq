@@ -503,6 +503,7 @@ export interface IAppProxy {
   onTodayJournalCreated: IUserHook<{ title: string }>
   onBeforeCommandInvoked: (condition: ExternalCommandType | string, callback: (e: IHookEvent) => void) => IUserOffHook
   onAfterCommandInvoked: (condition: ExternalCommandType | string, callback: (e: IHookEvent) => void) => IUserOffHook
+  onXCallbackReceived: IUserHook<{ payload: any }>
 
   /**
    * provide ui slot to specific block with UUID

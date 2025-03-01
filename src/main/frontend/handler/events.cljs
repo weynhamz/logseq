@@ -943,6 +943,13 @@
 (defmethod handle :whiteboard/redo [[_ e]]
   (whiteboard-handler/redo! e))
 
+(defmethod handle :plugin/x-callback [[_ data]]
+  (let [{:keys [plugin-name params]} (bean/->clj data)]
+    (js/console.log "Plugin Name:" plugin-name)
+    (js/console.log "Params:" params)
+    (plugin-handler/hook-plugin-app :x-callback-received {:payload params} plugin-name)
+    (plugin-handler/open-plugin-settings! plugin-name)))
+
 (defmethod handle :editor/quick-capture [[_ args]]
   (quick-capture/quick-capture args))
 
