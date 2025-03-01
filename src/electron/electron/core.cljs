@@ -3,7 +3,7 @@
             [electron.search :as search]
             [electron.updater :refer [init-updater] :as updater]
             [electron.utils :refer [*win mac? linux? dev? get-win-from-sender
-                                    decode-protected-assets-schema-path get-graph-name send-to-renderer]
+                                    decode-protected-assets-schema-path get-graph-name send-to-renderer send-to-focused-renderer]
              :as utils]
             [electron.url :refer [logseq-url-handler]]
             [electron.logger :as logger]
@@ -241,10 +241,15 @@
              (when-let [win @*win]
                (open-url-handler win url))))))
 
-(defn fork-server []
+(defn fork-server
+  [^js win]
   (let [server-path (node-path/join js/__dirname "gauth/server.js")
         ps (child-process/fork server-path)]
-    ps))
+    ;; Listen for messages from the forked server process
+    (.on ps "message" (fn [msg]
+      (logger/info "Message from gauth.server:" msg) 
+      (send-to-focused-renderer "pluginCallback" {:plugin-name 'logseq-google-tasks' :params msg} win)
+                        ))))
 
 (defn main []
   (if-not (.requestSingleInstanceLock app)
@@ -314,7 +319,7 @@
                ;; setup effects
                (@*setup-fn)
 
-               (fork-server)
+               (fork-server win)
 
                ;; main window events
                (.on win "close" (fn [e]
