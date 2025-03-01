@@ -72,6 +72,16 @@
                                 :warnings {:fn-deprecated false
                                            :redef false}}}
 
+:electron-server {:target :node-script
+                  :output-to "static/gauth/server.js"
+                  :main electron.gauth.server/main
+                  :compiler-options {:source-map true
+                                     :source-map-include-sources-content true
+                                     :source-map-detail-level :all
+
+                                     :warnings {:fn-deprecated false
+                                                :redef false}}}
+
   :test {:target :node-test
          :output-to "static/tests.js"
          :closure-defines {frontend.util/NODETEST true

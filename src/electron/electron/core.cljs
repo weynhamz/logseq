@@ -12,6 +12,7 @@
             [promesa.core :as p]
             [cljs-bean.core :as bean]
             [electron.fs-watcher :as fs-watcher]
+            ["child_process" :as child-process]
             ["path" :as node-path]
             ["os" :as os]
             ["electron" :refer [BrowserWindow Menu app protocol ipcMain dialog shell] :as electron]
@@ -240,6 +241,11 @@
              (when-let [win @*win]
                (open-url-handler win url))))))
 
+(defn fork-server []
+  (let [server-path (node-path/join js/__dirname "gauth/server.js")
+        ps (child-process/fork server-path)]
+    ps))
+
 (defn main []
   (if-not (.requestSingleInstanceLock app)
     (do
@@ -307,6 +313,8 @@
 
                ;; setup effects
                (@*setup-fn)
+
+               (fork-server)
 
                ;; main window events
                (.on win "close" (fn [e]
