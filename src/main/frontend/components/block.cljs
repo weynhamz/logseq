@@ -2344,6 +2344,13 @@
             :else
             nil)])
 
+      ;; Prepend the page name to the block content for tasks
+      (when (and (contains? #{"TODO" "DOING" "DONE"} (:block/marker block))
+             (not (:block/pre-block? block)))
+        (when-let [page-name (:block/name (db/entity (:db/id (:block/page block))))]
+          [:div.page-name
+           [:span.text-sm.font-medium.opacity-50 (page-cp config {:block/name page-name})]]))
+
        (clock-summary-cp block body)]
 
       (when (seq children)
