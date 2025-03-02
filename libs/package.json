@@ -4,7 +4,6 @@
   "description": "Logseq SDK libraries",
   "main": "dist/lsplugin.user.js",
   "typings": "index.d.ts",
-  "private": false,
   "scripts": {
     "build:user": "webpack --mode production",
     "dev:user": "npm run build:user -- --mode development --watch",
