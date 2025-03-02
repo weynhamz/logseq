@@ -939,7 +939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openid/appauth@npm:^1.3.2":
+"@openid/appauth@npm:1.3.2":
   version: 1.3.2
   resolution: "@openid/appauth@npm:1.3.2"
   dependencies:
@@ -950,6 +950,20 @@ __metadata:
     form-data: "npm:^4.0.0"
     opener: "npm:^1.5.2"
   checksum: 10c0/b14856e83182691e6df0d100dde29a76fb919cedb9f1798447b2c5f7941f4af51b07f3d9b92eaf1870d92f57eb3186094ec4f3d7f9639a8c5ff7fb031fb6073e
+  languageName: node
+  linkType: hard
+
+"@openid/appauth@patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch":
+  version: 1.3.2
+  resolution: "@openid/appauth@patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch::version=1.3.2&hash=28f221"
+  dependencies:
+    "@types/base64-js": "npm:^1.3.2"
+    "@types/jquery": "npm:^3.5.29"
+    base64-js: "npm:^1.5.1"
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    opener: "npm:^1.5.2"
+  checksum: 10c0/bd9b451acaadf970de6eb55d20aa90dc04170f3cb6372b2c1e5d50292f696b63ffe9aac99f4b28bdcba16bdb26dba74af6b31b3ee354d8360e3aa049ade2c023
   languageName: node
   linkType: hard
 
@@ -1305,7 +1319,7 @@ __metadata:
     "@electron/rebuild": "npm:3.2.10"
     "@fastify/cors": "npm:8.2.0"
     "@logseq/rsapi": "npm:0.0.91"
-    "@openid/appauth": "npm:^1.3.2"
+    "@openid/appauth": "patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch"
     "@sentry/electron": "npm:2.5.1"
     abort-controller: "npm:3.0.0"
     better-sqlite3: "npm:^11.7.0"

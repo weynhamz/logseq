@@ -1,0 +1,28 @@
+diff --git a/built/token_request.js b/built/token_request.js
+index a21867a896a0779f14853c5cf4ebd454ab549138..1d3cf1f55f943b195314fc226422bcd739f71e57 100644
+--- a/built/token_request.js
++++ b/built/token_request.js
+@@ -24,6 +24,7 @@ exports.GRANT_TYPE_REFRESH_TOKEN = 'refresh_token';
+ var TokenRequest = /** @class */ (function () {
+     function TokenRequest(request) {
+         this.clientId = request.client_id;
++        this.clientSecret = request.client_secret;
+         this.redirectUri = request.redirect_uri;
+         this.grantType = request.grant_type;
+         this.code = request.code;
+@@ -40,6 +41,7 @@ var TokenRequest = /** @class */ (function () {
+             refresh_token: this.refreshToken,
+             redirect_uri: this.redirectUri,
+             client_id: this.clientId,
++            client_Secret: this.clientSecret,
+             extras: this.extras
+         };
+     };
+@@ -47,6 +49,7 @@ var TokenRequest = /** @class */ (function () {
+         var map = {
+             grant_type: this.grantType,
+             client_id: this.clientId,
++            client_secret: this.clientSecret,
+             redirect_uri: this.redirectUri
+         };
+         if (this.code) {
