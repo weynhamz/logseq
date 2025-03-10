@@ -500,8 +500,8 @@ __metadata:
   linkType: hard
 
 "@electron/osx-sign@npm:^1.0.5":
-  version: 1.3.3
-  resolution: "@electron/osx-sign@npm:1.3.3"
+  version: 1.3.2
+  resolution: "@electron/osx-sign@npm:1.3.2"
   dependencies:
     compare-version: "npm:^0.1.2"
     debug: "npm:^4.3.4"
@@ -512,7 +512,7 @@ __metadata:
   bin:
     electron-osx-flat: bin/electron-osx-flat.js
     electron-osx-sign: bin/electron-osx-sign.js
-  checksum: 10c0/f8156be879b1850465da8135398b9e58aa6db9f3310cd625c471e1080008b628846c3345a171e17509bcd3c1883cbc90f49a914e7486b1f41702cf2499c657d0
+  checksum: 10c0/cbd92ede05c5be43e0a11cd1b919fdcf2add6a070818b4fcda4631d9bc1c854667e3d0898587c373a3b1b8365e461e9c8175c0064588f9841ea1266c0ef234bb
   languageName: node
   linkType: hard
 
@@ -939,7 +939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openid/appauth@npm:1.3.2":
+"@openid/appauth@npm:^1.3.2":
   version: 1.3.2
   resolution: "@openid/appauth@npm:1.3.2"
   dependencies:
@@ -950,20 +950,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     opener: "npm:^1.5.2"
   checksum: 10c0/b14856e83182691e6df0d100dde29a76fb919cedb9f1798447b2c5f7941f4af51b07f3d9b92eaf1870d92f57eb3186094ec4f3d7f9639a8c5ff7fb031fb6073e
-  languageName: node
-  linkType: hard
-
-"@openid/appauth@patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch":
-  version: 1.3.2
-  resolution: "@openid/appauth@patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch::version=1.3.2&hash=28f221"
-  dependencies:
-    "@types/base64-js": "npm:^1.3.2"
-    "@types/jquery": "npm:^3.5.29"
-    base64-js: "npm:^1.5.1"
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
-    opener: "npm:^1.5.2"
-  checksum: 10c0/bd9b451acaadf970de6eb55d20aa90dc04170f3cb6372b2c1e5d50292f696b63ffe9aac99f4b28bdcba16bdb26dba74af6b31b3ee354d8360e3aa049ade2c023
   languageName: node
   linkType: hard
 
@@ -1241,11 +1227,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^20.9.0":
-  version: 20.17.24
-  resolution: "@types/node@npm:20.17.24"
+  version: 20.17.22
+  resolution: "@types/node@npm:20.17.22"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/2a39ce4c4cd4588a05b2a485cc0a1407cbea608dd1ab03e36add59d61712718d95c84b492ca5190753f0be2bce748aeeb0f2a1412e712775462befe3820b3ff9
+  checksum: 10c0/5a78f60144bd69eaf1bdce39c906d988b0dc0f4c13068af9a3c44b0df737a0f363680a97d073a45d962b061cd4b3a8cfab71eec491ca6845888b68ab7855a778
   languageName: node
   linkType: hard
 
@@ -1319,7 +1305,7 @@ __metadata:
     "@electron/rebuild": "npm:3.2.10"
     "@fastify/cors": "npm:8.2.0"
     "@logseq/rsapi": "npm:0.0.91"
-    "@openid/appauth": "patch:@openid/appauth@npm%3A1.3.2#~/.yarn/patches/@openid-appauth-npm-1.3.2-32ad61d0cf.patch"
+    "@openid/appauth": "npm:^1.3.2"
     "@sentry/electron": "npm:2.5.1"
     abort-controller: "npm:3.0.0"
     better-sqlite3: "npm:^11.7.0"
