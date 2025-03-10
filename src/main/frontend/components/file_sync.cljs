@@ -29,6 +29,7 @@
             [rum.core :as rum]
             [cljs-time.core :as t]
             [cljs-time.coerce :as tc]
+            [cljs-time.format :as tf]
             [goog.functions :refer [debounce]]
             [logseq.graph-parser.util :as gp-util]))
 
@@ -613,9 +614,9 @@
               :on-click #(set-page-fn version)}
 
              [:div.text-sm.pt-1
-              (ui/humanity-time-ago
+              (tf/unparse (tf/formatters :date-hour-minute-second) (tc/from-long
                (or (:CreateTime version)
-                   (:create-time version)) nil)]
+                   (:create-time version))))]
              [:small.opacity-50.translate-y-1.flex.items-center.space-x-1
               (if local?
                 [:<> (ui/icon "git-commit") [:span "local"]]
